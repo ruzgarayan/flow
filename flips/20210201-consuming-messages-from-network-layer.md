@@ -2,7 +2,7 @@
 
 | Status        | Accepted       |
 :-------------- |:---------------------------------------------------- |
-| **FLIP #**    | [343](https://github.com/ruzgarayan/flow/pull/343) |
+| **FLIP #**    | [343](https://github.com/onflow/flow/pull/343) |
 | **Author(s)** | Alex Hentschel (alex.hentschel@dapperlabs.com) |
 | **Sponsor**   | Alex Hentschel (alex.hentschel@dapperlabs.com)             |
 | **Updated**   | 2021-09-20                                           |

@@ -24,7 +24,7 @@ will solve it. Specifically, the FLIP will:
 
 * be formatted according to the FLIP template
 * be submitted as a pull request to the
-  [ruzgarayan/flow/flips](https://github.com/ruzgarayan/flow/tree/master/flips) directory
+  [onflow/flow/flips](https://github.com/onflow/flow/tree/master/flips) directory
 * be subject to discussion and a review meeting prior to acceptance
 
 ## FLIP process
@@ -57,7 +57,7 @@ Once the FLIP is ready for review:
 
    Include the header table and the contents of the **Objective** section 
    in the comment of your pull request, using Markdown. For an example,
-   please see [this example FLIP](https://github.com/ruzgarayan/flow/pull/5). 
+   please see [this example FLIP](https://github.com/onflow/flow/pull/5). 
    Include a mention of any of the GitHub handles of co-authors, reviewers 
    and sponsors.
 
@@ -87,7 +87,7 @@ existence in full or part may help the design discussion.
 
 If in any doubt about this process, feel free to ask on [Discord](https://discord.gg/flow), 
 the [community forum](https://forum.onflow.org/), or file an issue in this repository 
-([`onflow/flow`](https://github.com/ruzgarayan/flow/issues)).
+([`onflow/flow`](https://github.com/onflow/flow/issues)).
 
 ## Proposal states
 

@@ -6,7 +6,7 @@ package access
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	entities "github.com/ruzgarayan/flow/protobuf/go/flow/legacy/entities"
+	entities "github.com/onflow/flow/protobuf/go/flow/legacy/entities"
 	math "math"
 )
 

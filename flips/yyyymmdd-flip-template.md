@@ -2,7 +2,7 @@
 
 | Status        | (Proposed / Rejected / Accepted / Implemented)       |
 :-------------- |:---------------------------------------------------- |
-| **FLIP #**    | [NNN](https://github.com/ruzgarayan/flow/pull/NNN) (update when you have PR #)|
+| **FLIP #**    | [NNN](https://github.com/onflow/flow/pull/NNN) (update when you have PR #)|
 | **Author(s)** | My Name (me@example.org), AN Other (you@example.org) |
 | **Sponsor**   | AN Expert (core-contributor@example.org)             |
 | **Updated**   | YYYY-MM-DD                                           |

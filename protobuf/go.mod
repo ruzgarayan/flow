@@ -1,4 +1,4 @@
-module github.com/ruzgarayan/flow
+module github.com/onflow/flow
 
 go 1.16
 
