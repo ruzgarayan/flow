@@ -88,7 +88,7 @@ Below are the various options you can choose. Please be aware, that at this time
 - Staking your own Node: You are responsible for running and maintaining a Flow Node. You are also solely responsible for providing the minimum stake for your   selected node (minimum 135,000 FLOW) and you have the technical know-how and bandwidth to run and operate a node in the Flow protocol.
 - Delegating: You have FLOW tokens and you want to stake, without having to run your own node and/or have the full minimum stake required to run your own node. You can ‘delegate’ any amount of your FLOW tokens to an existing node operator and you will earn rewards.
 
-Please see a list [here](https://github.com/onflow/flow/blob/master/nodeoperators/NodeOperatorList.md) for all node operators that you can delegate to. This list will be updated as new node operators are onboarded onto the network.'
+Please see a list [here](https://github.com/ruzgarayan/flow/blob/master/nodeoperators/NodeOperatorList.md) for all node operators that you can delegate to. This list will be updated as new node operators are onboarded onto the network.'
 
 ### Staking your own Node
   1. Once you have navigated to the staking/delegating page in Flow Port, click on the 'Stake a Node' option.
@@ -138,7 +138,7 @@ Please see a list [here](https://github.com/onflow/flow/blob/master/nodeoperator
 
   3. Where can I find a list of node operators to delegate to?
 
-     - a.) Please see a list [here](https://github.com/onflow/flow/blob/master/nodeoperators/NodeOperatorList.md) for all node operators that you can delegate to. This list will be updated as new node operators are onboarded onto the network.
+     - a.) Please see a list [here](https://github.com/ruzgarayan/flow/blob/master/nodeoperators/NodeOperatorList.md) for all node operators that you can delegate to. This list will be updated as new node operators are onboarded onto the network.
 
   4. I am currently running a node on the network already and have already gone through the staking process once. Do I need to execute a new stake every time there is a new epoch?
 

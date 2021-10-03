@@ -7,7 +7,7 @@ The Access API is implemented as a [gRPC service](https://grpc.io/).
 
 A language-agnostic specification for this API is defined using [Protocol Buffers](https://developers.google.com/protocol-buffers), which can be used to generate client libraries in a variety of programming languages.
 
-- [Flow Access API protobuf source files](https://github.com/onflow/flow/tree/master/protobuf)
+- [Flow Access API protobuf source files](https://github.com/ruzgarayan/flow/tree/master/protobuf)
 
 ## Flow access node endpoints
 
