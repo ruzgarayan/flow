@@ -18,6 +18,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AccessAPIClient interface {
+	//To check newly added header fields
+	GetEntireBlockHeaderByID(ctx context.Context, in *GetBlockHeaderByIDRequest, opts ...grpc.CallOption) (*EntireBlockHeaderResponse, error)
+	
 	// Ping is used to check if the access node is alive and healthy.
 	Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error)
 	// GetLatestBlockHeader gets the latest sealed or unsealed block header.
@@ -85,6 +88,15 @@ type accessAPIClient struct {
 
 func NewAccessAPIClient(cc grpc.ClientConnInterface) AccessAPIClient {
 	return &accessAPIClient{cc}
+}
+
+func (c *accessAPIClient) GetEntireBlockHeaderByID(ctx context.Context, in *GetBlockHeaderByIDRequest, opts ...grpc.CallOption) (*EntireBlockHeaderResponse, error) {
+	out := new(EntireBlockHeaderResponse)
+	err := c.cc.Invoke(ctx, "/flow.access.AccessAPI/GetEntireBlockHeaderByID", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *accessAPIClient) Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error) {
@@ -289,6 +301,8 @@ func (c *accessAPIClient) GetExecutionResultForBlockID(ctx context.Context, in *
 // All implementations should embed UnimplementedAccessAPIServer
 // for forward compatibility
 type AccessAPIServer interface {
+	//To check newly added header fields
+	GetEntireBlockHeaderByID(context.Context, *GetBlockHeaderByIDRequest) (*EntireBlockHeaderResponse, error)
 	// Ping is used to check if the access node is alive and healthy.
 	Ping(context.Context, *PingRequest) (*PingResponse, error)
 	// GetLatestBlockHeader gets the latest sealed or unsealed block header.
@@ -354,6 +368,9 @@ type AccessAPIServer interface {
 type UnimplementedAccessAPIServer struct {
 }
 
+func (UnimplementedAccessAPIServer) GetEntireBlockHeaderByID(context.Context, *GetBlockHeaderByIDRequest) (*EntireBlockHeaderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEntireBlockHeaderByID not implemented")
+}
 func (UnimplementedAccessAPIServer) Ping(context.Context, *PingRequest) (*PingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
 }
@@ -430,6 +447,24 @@ type UnsafeAccessAPIServer interface {
 
 func RegisterAccessAPIServer(s grpc.ServiceRegistrar, srv AccessAPIServer) {
 	s.RegisterService(&AccessAPI_ServiceDesc, srv)
+}
+
+func _AccessAPI_GetEntireBlockHeaderByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBlockHeaderByIDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccessAPIServer).GetEntireBlockHeaderByID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/flow.access.AccessAPI/GetEntireBlockHeaderByID",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccessAPIServer).GetEntireBlockHeaderByID(ctx, req.(*GetBlockHeaderByIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _AccessAPI_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -835,6 +870,10 @@ var AccessAPI_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "flow.access.AccessAPI",
 	HandlerType: (*AccessAPIServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetEntireBlockHeaderByID",
+			Handler:    _AccessAPI_GetEntireBlockHeaderByID_Handler,
+		},
 		{
 			MethodName: "Ping",
 			Handler:    _AccessAPI_Ping_Handler,

@@ -16,6 +16,10 @@ import "google/protobuf/timestamp.proto";
 
 // AccessAPI is the public-facing API provided by access nodes.
 service AccessAPI {
+
+  //To check newly added header fields
+  rpc GetEntireBlockHeaderByID(GetBlockHeaderByIDRequest) returns (EntireBlockHeaderResponse);
+
   // Ping is used to check if the access node is alive and healthy.
   rpc Ping(PingRequest) returns (PingResponse);
 
@@ -140,6 +144,10 @@ message GetBlockHeaderByHeightRequest {
 
 message BlockHeaderResponse {
   entities.BlockHeader block = 1;
+}
+
+message EntireBlockHeaderResponse {
+  entities.EntireBlockHeader block = 1;
 }
 
 // Blocks
